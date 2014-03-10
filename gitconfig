@@ -1,0 +1,7 @@
+[user]
+	email = ewpt3ch@gmail.com
+	name = Eric Phillips
+[credential]
+	helper = cache --timeout=3600
+[push]
+	default = simple
