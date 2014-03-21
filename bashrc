@@ -15,7 +15,7 @@ if [[ $- != *i* ]] ; then
 fi
 
 # Put your fun stuff here.
-source /etc/profile.d/bash-completion.sh
+#source /etc/profile.d/bash-completion.sh
 source ~/todo.txt-cli/todo_completion
 alias emacs='emacs -nw'
 alias t='$HOME/Dropbox/todo/todo.sh -d $HOME/Dropbox/todo/todo.cfg'
@@ -23,6 +23,8 @@ alias nano='nano -w'
 complete -F _todo t
 PATH="/home/ewpt3ch/bin:${PATH}:./:"
 export VMWARE_USE_SHIPPED_GTK="yes"
+export EDITOR=:vim
+export PAGER=less
 keychain -q ~/.ssh/id_ecdsa
 . ~/.keychain/$HOSTNAME-sh
 . ~/.keychain/$HOSTNAME-sh-gpg
