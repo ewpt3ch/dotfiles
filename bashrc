@@ -28,3 +28,8 @@ export PAGER=less
 keychain -q ~/.ssh/id_ecdsa
 . ~/.keychain/$HOSTNAME-sh
 . ~/.keychain/$HOSTNAME-sh-gpg
+#Check if dropbox is running
+if  dropbox.py running  ; then
+  #start dropbox
+  ~/bin/dropbox.py start
+fi
