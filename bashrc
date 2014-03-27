@@ -33,3 +33,8 @@ if  dropbox.py running  ; then
   #start dropbox
   ~/bin/dropbox.py start
 fi
+#check if btsync running and start
+if ! ps -A | grep -q btsync ; then
+  #start btsync
+  btsync --config ~/.config/btsync/btsync.conf
+fi
