@@ -20,6 +20,10 @@ source ~/todo.txt-cli/todo_completion
 alias emacs='emacs -nw'
 alias t='$HOME/Dropbox/todo/todo.sh -d $HOME/Dropbox/todo/todo.cfg'
 alias nano='nano -w'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 complete -F _todo t
 PATH="/home/ewpt3ch/bin:${PATH}:./:"
 export VMWARE_USE_SHIPPED_GTK="yes"

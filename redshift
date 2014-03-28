@@ -1,0 +1,11 @@
+;Global Settings
+[redshift]
+temp-day=5700
+temp-night=4000
+transition=1
+
+[manual]
+;denver
+lat=39.898700
+lon=-105.040452
+
