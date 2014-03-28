@@ -23,7 +23,7 @@ alias nano='nano -w'
 complete -F _todo t
 PATH="/home/ewpt3ch/bin:${PATH}:./:"
 export VMWARE_USE_SHIPPED_GTK="yes"
-export EDITOR=:vim
+export EDITOR=vim
 export PAGER=less
 keychain -q ~/.ssh/id_ecdsa ~/.ssh/id_rsa
 . ~/.keychain/$HOSTNAME-sh
