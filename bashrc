@@ -25,7 +25,7 @@ PATH="/home/ewpt3ch/bin:${PATH}:./:"
 export VMWARE_USE_SHIPPED_GTK="yes"
 export EDITOR=:vim
 export PAGER=less
-keychain -q ~/.ssh/id_ecdsa
+keychain -q ~/.ssh/id_ecdsa ~/.ssh/id_rsa
 . ~/.keychain/$HOSTNAME-sh
 . ~/.keychain/$HOSTNAME-sh-gpg
 #Check if dropbox is running
