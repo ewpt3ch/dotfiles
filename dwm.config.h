@@ -1,4 +1,6 @@
 /* See LICENSE file for copyright and license details. */
+/*includes*/
+#include <X11/XF86keysym.h> /*Needed for mulitmedia keys*/
 
 /* appearance */
 static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
@@ -48,9 +50,16 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "uxterm", NULL };
+/*functions for volume control*/
+static const char *upvol[] = { "amixer, "sset", "Master", "5%+", NULL};
+static const char *updown[] = { "amixer, "sset", "Master", "5%-", NULL};
+static const char *mute[] = { "amixer, "sset", "Master", "toggle", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+  { MODKEY,         XF86XK_AudioRaiseVolume, spawn,          {.v = upvol} },
+  { MODKEY,         XF86XK_AudioLowerVolume, spawn,          {.v = downvol} },
+  { MODKEY,         XF86XK_AudioMute,        spawn,          {.v = mute } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
