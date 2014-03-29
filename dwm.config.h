@@ -51,9 +51,9 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "uxterm", NULL };
 /*functions for volume control*/
-static const char *upvol[] = { "amixer, "sset", "Master", "5%+", NULL};
-static const char *updown[] = { "amixer, "sset", "Master", "5%-", NULL};
-static const char *mute[] = { "amixer, "sset", "Master", "toggle", NULL};
+static const char *upvol[] = { "amixer", "sset", "Master", "5%+", NULL};
+static const char *downvol[] = { "amixer", "sset", "Master", "5%-", NULL};
+static const char *mute[] = { "amixer", "sset", "Master", "toggle", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
