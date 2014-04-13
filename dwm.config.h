@@ -51,8 +51,8 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", "Inconsolata-9", "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "termite", NULL };
 /*functions for volume control*/
-static const char *upvol[] = { "amixer", "sset", "Master", "5%+", NULL};
-static const char *downvol[] = { "amixer", "sset", "Master", "5%-", NULL};
+static const char *upvol[] = { "amixer", "sset", "Master", "1%+", NULL};
+static const char *downvol[] = { "amixer", "sset", "Master", "1%-", NULL};
 static const char *mute[] = { "amixer", "sset", "Master", "toggle", NULL};
 
 static Key keys[] = {
