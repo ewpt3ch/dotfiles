@@ -12,4 +12,4 @@ total_run_times 0
 use_spacer none
 
 TEXT
-${exec ~/bin/volume.sh} ${battery BAT1} ${addr wlp0s29f7u1} $time
+${exec ~/bin/volume.sh} ${battery BAT1} ${wireless_essid wlp0s29f7u1} ${addr wlp0s29f7u1} $time
