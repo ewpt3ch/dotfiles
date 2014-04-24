@@ -54,12 +54,17 @@ static const char *termcmd[]  = { "termite", NULL };
 static const char *upvol[] = { "amixer", "sset", "Master", "1%+", NULL};
 static const char *downvol[] = { "amixer", "sset", "Master", "1%-", NULL};
 static const char *mute[] = { "amixer", "sset", "Master", "toggle", NULL};
+/*cmus functions*/
+static const char *cmusplaypause[] = { "cmus-remote", "-u", NULL};
+static const char *cmusnext[] = { "cmus-remote", "--next", NULL};
+static const char *cmusprev[] = { "cmus-remote", "--prev", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
   { 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = upvol} },
   { 0,              XF86XK_AudioLowerVolume, spawn,          {.v = downvol} },
   { 0,              XF86XK_AudioMute,        spawn,          {.v = mute } },
+  { MODKEY,                       XK_u,      spawn,          {.v = cmusplaypause} },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
