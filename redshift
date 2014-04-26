@@ -1,7 +1,7 @@
 ;Global Settings
 [redshift]
 temp-day=6300
-temp-night=4500
+temp-night=4000
 transition=1
 
 [manual]
