@@ -3,7 +3,7 @@
 #include <X11/XF86keysym.h> /*Needed for mulitmedia keys*/
 
 /* appearance */
-static const char font[]            = "Inconsolata:size=9";
+static const char font[]            = "Ohsnap.Icons:size=12";
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";
