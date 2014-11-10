@@ -12,4 +12,4 @@ total_run_times 0
 use_spacer none
 
 TEXT
-${exec ~/bin/volume.sh} ${battery BAT1} ${wireless_essid wlp1s0} ${addr wlp1s0} $time
+${exec ~/bin/cmus-stats.sh} ${exec ~/bin/volume.sh} ${battery BAT1} ${wireless_essid wlp1s0} ${addr wlp1s0} $time
