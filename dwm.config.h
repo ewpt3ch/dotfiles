@@ -3,7 +3,8 @@
 #include <X11/XF86keysym.h> /*Needed for mulitmedia keys*/
 
 /* appearance */
-static const char font[]            = "Inconsolata:size=9";
+//static const char font[]            = "Ohsnap.Icons:size=12";
+static const char font[]            = "Inconsolata-12";
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";
@@ -21,7 +22,7 @@ static const char *tags[] = { "term", "coms", "www", "dev", "work", "6", "7", "8
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
+	{ "Firefox",  NULL,       NULL,       1,            False,       -1 },
 };
 
 /* layout(s) */
@@ -48,7 +49,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", "Inconsolata-9", "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", "Inconsolata-12", "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "termite", NULL };
 /*functions for volume control*/
 static const char *upvol[] = { "amixer", "sset", "Master", "1%+", NULL};
