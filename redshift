@@ -3,6 +3,8 @@
 temp-day=6300
 temp-night=4000
 transition=1
+location-provider=manual
+
 
 [manual]
 ;denver
