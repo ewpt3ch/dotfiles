@@ -18,7 +18,7 @@ fi
 #source /etc/profile.d/bash-completion.sh
 source ~/todo.txt-cli/todo_completion
 alias emacs='emacs -nw'
-alias t='$HOME/Dropbox/todo/todo.sh -d $HOME/Dropbox/todo/todo.cfg'
+alias t='clear && $HOME/Dropbox/todo/todo.sh -d $HOME/Dropbox/todo/todo.cfg'
 alias nano='nano -w'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -29,18 +29,17 @@ PATH="/home/ewpt3ch/bin:${PATH}:./:"
 export VMWARE_USE_SHIPPED_GTK="yes"
 export EDITOR=vim
 export PAGER=less
+export LIBVA_DRIVER_NAME=vdpau
 #create cache-dir for chrome
 mkdir -p /tmp/ewpt3ch-cache
-keychain -q ~/.ssh/id_ecdsa ~/.ssh/id_rsa
-. ~/.keychain/$HOSTNAME-sh
-. ~/.keychain/$HOSTNAME-sh-gpg
+eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_ecdsa ~/.ssh/id_rsa)
 #Check if dropbox is running
 if  dropbox.py running  ; then
   #start dropbox
   ~/bin/dropbox.py start
 fi
 #check if btsync running and start
-if ! ps -A | grep -q btsync ; then
+#if ! ps -A | grep -q btsync ; then
   #start btsync
-  btsync --config ~/.config/btsync/btsync.conf
-fi
+#  btsync --config ~/.config/btsync/btsync.conf
+#fi
