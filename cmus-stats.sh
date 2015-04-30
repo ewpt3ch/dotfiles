@@ -4,7 +4,7 @@ then
   status=`cmus-remote -Q | grep status | awk '{print $2}'`
   if [ $status == "paused" ]
   then
-    status="ç"
+    status="→"
   else
     status="æ"
   fi
