@@ -17,6 +17,9 @@ fi
 # Put your fun stuff here.
 #source /etc/profile.d/bash-completion.sh
 source ~/todo.txt-cli/todo_completion
+#pacman aliases
+alias pacupg='sudo pacman -Syu'
+alias pacins='sudo pacman -U'
 alias emacs='emacs -nw'
 alias t='clear && $HOME/Dropbox/todo/todo.sh -d $HOME/Dropbox/todo/todo.cfg'
 alias nano='nano -w'
