@@ -7,9 +7,9 @@ static const char font[]            = "Inconsolata-12";
 #define NUMCOLORS 9 
 static const char colors[NUMCOLORS][ColLast][9] = {
   // border foreground background
-  { "#212121", "#696969", "#121212" }, // 0 = normal
-  { "#696969", "#E0E0E0", "#121212" }, // 1 = selected
-  { "#212121", "#CF4F88", "#121212" }, // 2 = red
+  { "#212121", "#00CC00", "#121212" }, // 0 = normal
+  { "#696969", "#99FF99", "#121212" }, // 1 = selected
+  { "#212121", "#CC0000", "#121212" }, // 2 = red
   { "#212121", "#53A6A6", "#121212" }, // 3 = green
   { "#212121", "#914E89", "#121212" }, // 4 = yellow
   { "#212121", "#4779B3", "#121212" }, // 5 = blue
