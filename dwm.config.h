@@ -1,4 +1,6 @@
 /* See LICENSE file for copyright and license details. */
+/*includes*/
+#include <X11/XF86keysym.h> /*Needed for mulitmedia keys*/
 
 /* appearance */
 static const char font[]            = "Inconsolata-12";
