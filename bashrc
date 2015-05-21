@@ -1,14 +1,12 @@
-# /etc/skel/.bashrc
-#
-# This file is sourced by all *interactive* bash shells on startup,
-# including some apparently interactive shells such as scp and rcp
-# that can't tolerate any output.  So make sure this doesn't display
-# anything or bad things will happen !
+#!/bin/bash
 
+### ~/.bashrc #######################
+#####################################
+## eric at ewpt3ch.com ##############
+## dotfiles on github.com ewpt3ch ###
+#####################################
 
-# Test for an interactive shell.  There is no need to set anything
-# past this point for scp and rcp, and it's important to refrain from
-# outputting anything in those cases.
+### test for interactive shell
 if [[ $- != *i* ]] ; then
 	# Shell is non-interactive.  Be done now!
 	return
@@ -18,9 +16,10 @@ fi
 #source /etc/profile.d/bash-completion.sh
 source ~/todo.txt-cli/todo_completion
 #pacman aliases
-alias pacupg='sudo pacman -Syu'
-alias pacins='sudo pacman -U'
-alias emacs='emacs -nw'
+alias pacman='sudo pacman'
+alias pacupg='pacman -Syu'
+alias pacins='pacman -U'
+#
 alias t='clear && $HOME/Dropbox/todo/todo.sh -d $HOME/Dropbox/todo/todo.cfg'
 alias nano='nano -w'
 alias ls='ls --color=auto'
