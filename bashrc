@@ -33,6 +33,7 @@ export VMWARE_USE_SHIPPED_GTK="yes"
 export EDITOR=vim
 export PAGER=less
 export LIBVA_DRIVER_NAME=vdpau
+export BROWSER=firefox-developer
 #create cache-dir for chrome
 mkdir -p /tmp/ewpt3ch-cache
 eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_ecdsa ~/.ssh/id_rsa)
