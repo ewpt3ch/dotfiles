@@ -9,5 +9,5 @@ done &
 while true; do
 	dwm >/dev/null
 	# to log stderrors to a file 
-	# dwm 2> ~/Build/dwm/dwm.log
+	#dwm 2> /tmp/dwm.log
 done 
