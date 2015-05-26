@@ -24,6 +24,7 @@ glyph_clk="\u01Af"
 glyph_bln="\u01AA"
 glyph_msc="\u01AB"
 glyph_vol="\u01AC"
+glyph_mute="\u01B4"
 glyph_mail="\u01AD"
 glyph_wifi="\u01AE"
 
@@ -39,15 +40,29 @@ msc(){
   echo -ne "${glyph_msc} ${song_info}"
 }
 
+#Date
 dte(){
   datetime="$(date "+%F %T")"
   echo -ne "${glyph_clk} ${datetime}"
 }
 
+#Power and Battery
 bat(){
   charge=`acpi -b | awk '{print +$4}'`
   echo -ne "${glyph_pow} ${charge}%"
 }
+
+#Volume
+vol(){
+  mute=`amixer get Master | grep "Front Left:" | awk '{print $6}'`
+  if [ ${mute} == "[on]" ]
+  then
+    volume=`amixer get Master | grep "Front Left:" | awk '{print $5}' | tr -d '[]'`
+    echo -ne "${glyph_vol} ${volume}"
+  else
+    echo -ne "${glyph_mute}"
+  fi
+}
   
 # Pipe to statusbar
-xsetroot -name "$(msc) $(bat) $(dte) "
+xsetroot -name "$(msc) $(vol) $(bat) $(dte) "
