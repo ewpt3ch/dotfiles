@@ -63,6 +63,18 @@ vol(){
     echo -ne "${glyph_mute}"
   fi
 }
+
+#Memory
+mem(){
+  memused="$(free -m | awk 'NR==2 {print $3}')"
+  echo -ne "${glyph_mem}${memused}M"
+}
+
+#CPU
+load(){
+  cpu="$(uptime | awk '{print +$8, +$9, +$10}')"
+  echo -ne "${glyph_cpu} ${cpu}"
+}
   
 # Pipe to statusbar
-xsetroot -name "$(msc) $(vol) $(bat) $(dte) "
+xsetroot -name "$(msc) $(load) $(mem) $(bat) $(vol) $(dte) "
