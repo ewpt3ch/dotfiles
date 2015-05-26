@@ -75,6 +75,29 @@ load(){
   cpu="$(uptime | awk '{print +$8, +$9, +$10}')"
   echo -ne "${glyph_cpu} ${cpu}"
 }
-  
+
+#Network
+rx_old=$(cat /sys/class/net/wlp1s0/statistics/rx_bytes)
+tx_old=$(cat /sys/class/net/wlp1s0/statistics/rx_bytes) 
+while true; do
+  #get new rx/tx counts
+  rx_now=$(cat /sys/class/net/wlp1s0/statistics/rx_bytes)
+  tx_now=$(cat /sys/class/net/wlp1s0/statistics/rx_bytes)
+  #calculate rate (K)
+  let rx_rate=($rx_now-$rx_old)/1024
+  let tx_rate=($tx_now-$tx_old)/1024
+  rx_rate(){
+    echo -ne "${glyph_dl} ${rx_rate}K"
+  }
+  tx_rate(){
+    echo -ne "${glyph_ul} ${tx_rate}K"
+  }
+
 # Pipe to statusbar
-xsetroot -name "$(msc) $(load) $(mem) $(bat) $(vol) $(dte) "
+xsetroot -name "$(msc) $(load) $(mem) $(rx_rate)$(tx_rate) $(bat) $(vol) $(dte) "
+
+  #reset rates
+  rx_old=$rx_now
+  tx_old=$tx_now
+  sleep 1
+done
