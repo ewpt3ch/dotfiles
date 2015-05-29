@@ -9,10 +9,15 @@
 ########################
 
 # colors from dwm.config.h
-color_normal="\x01"   #normal
-color_selected="\x02" #selected
-color_blue="\x06"     #blue
-color_red="\x03"      #red
+color_normal="\x01"    #normal
+color_selected="\x02"  #selected
+color_urgent="\x03"    #urgent
+color_important="\x04" #important
+color_yellow="\x05"    #yellow
+color_blue="\x06"      #blue
+color_cyan="\x07"      #cyan
+color_magenta="\x08"   #magenta
+color_grey="\x09"      #grey
 
 # Icon glyphs from Inconsolataicon
 glyph_cpu="\u01B0"
@@ -37,19 +42,24 @@ msc(){
     song_info=${artist}-${song}
   fi
 
-  echo -ne "${glyph_msc} ${song_info}"
+  echo -ne "${color_selected}${glyph_msc} ${song_info}${color_normal}"
 }
 
 #Date
 dte(){
   datetime="$(date "+%F %T")"
-  echo -ne "${glyph_clk} ${datetime}"
+  echo -ne "${color_selected}${glyph_clk} ${datetime}${color_normal}"
 }
 
 #Power and Battery
 bat(){
   charge=`acpi -b | awk '{print +$4}'`
-  echo -ne "${glyph_pow} ${charge}%"
+  if [ $charge -lt "25" ]
+  then
+    echo -ne "${color_urgent}${glyph_pow} ${charge}%${color_normal}"
+  else
+    echo -ne "${color_selected}${glyph_pow} ${charge}%${color_normal}"
+  fi
 }
 
 #Volume
@@ -72,20 +82,20 @@ mem(){
 
 #CPU
 load(){
-  cpu="$(uptime | awk '{print +$8, +$9, +$10}')"
+  cpu="$(cat /proc/loadavg | awk '{print $1, $2, $3}')"
   echo -ne "${glyph_cpu} ${cpu}"
 }
 
 #Network
 rx_old=$(cat /sys/class/net/wlp1s0/statistics/rx_bytes)
-tx_old=$(cat /sys/class/net/wlp1s0/statistics/rx_bytes) 
+tx_old=$(cat /sys/class/net/wlp1s0/statistics/tx_bytes) 
 while true; do
   #get new rx/tx counts
   rx_now=$(cat /sys/class/net/wlp1s0/statistics/rx_bytes)
-  tx_now=$(cat /sys/class/net/wlp1s0/statistics/rx_bytes)
-  #calculate rate (K)
-  let rx_rate=($rx_now-$rx_old)/1024
-  let tx_rate=($tx_now-$tx_old)/1024
+  tx_now=$(cat /sys/class/net/wlp1s0/statistics/tx_bytes)
+  #calculate rate (K) divide by 1024 * polling rate (sleep below)
+  let rx_rate=($rx_now-$rx_old)/2048
+  let tx_rate=($tx_now-$tx_old)/2048
   rx_rate(){
     echo -ne "${glyph_dl} ${rx_rate}K"
   }
@@ -93,11 +103,11 @@ while true; do
     echo -ne "${glyph_ul} ${tx_rate}K"
   }
 
-# Pipe to statusbar
-xsetroot -name "$(msc) $(load) $(mem) $(rx_rate)$(tx_rate) $(bat) $(vol) $(dte) "
+  # Pipe to statusbar
+  xsetroot -name "$(msc) $(load) $(mem) $(rx_rate)$(tx_rate) $(bat) $(vol) $(dte) "
 
   #reset rates
   rx_old=$rx_now
   tx_old=$tx_now
-  sleep 1
+  sleep 2
 done
