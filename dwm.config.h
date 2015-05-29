@@ -8,15 +8,15 @@ static const char font[]  =                     "Inconsolataicon-12";
 #define NUMCOLORS 9 
 static const char colors[NUMCOLORS][ColLast][9] = {
   // border foreground background
-  { "#212121", "#ADFF2F", "#2F4F4F" }, // 0 = normal
-  { "#696969", "#00CED1", "#2F4F4F" }, // 1 = selected
-  { "#212121", "#CC0000", "#2F4F4F" }, // 2 = red
-  { "#212121", "#53A6A6", "#2F4F4F" }, // 3 = green
-  { "#212121", "#914E89", "#2F4F4F" }, // 4 = yellow
-  { "#212121", "#4779B3", "#2F4F4F" }, // 5 = blue
-  { "#212121", "#47959E", "#2F4F4F" }, // 6 = cyan
-  { "#212121", "#7E62B3", "#2F4F4F" }, // 7 = magenta
-  { "#212121", "#899CA1", "#2F4F4F" }, // 8 = grey
+  { "#212121", "#00FFFF", "#2F4F4F" }, // 0 = normal
+  { "#696969", "#ADFF2F", "#2F4F4F" }, // 1 = selected
+  { "#212121", "#F8F8FF", "#C71585" }, // 2 = urgent 
+  { "#212121", "#90EE90", "#778899" }, // 3 = important 
+  { "#212121", "#FFFF00", "#2F4F4F" }, // 4 = yellow
+  { "#212121", "#00BFFF", "#2F4F4F" }, // 5 = blue
+  { "#212121", "#00FFFF", "#2F4F4F" }, // 6 = cyan
+  { "#212121", "#FF00FF", "#2F4F4F" }, // 7 = magenta 
+  { "#212121", "#F5F5F5", "#2F4F4F" }, // 8 = grey
   };
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
