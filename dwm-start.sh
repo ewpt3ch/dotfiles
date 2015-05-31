@@ -3,7 +3,7 @@
 
 while true; do
 		$HOME/bin/dwmstatus
-    	sleep 2
+   	sleep 2
 done &
 
 while true; do
