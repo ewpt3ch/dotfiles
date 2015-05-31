@@ -5,4 +5,5 @@ redshift &
 #pulseaudio --start &
 start-pulseaudio-x11
 google-musicmanager &
+unclutter -noevents &
 exec dbus-launch --exit-with-session --sh-syntax dwm
