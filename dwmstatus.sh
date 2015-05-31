@@ -23,7 +23,6 @@ color_grey="\x09"      #grey
 glyph_cpu="\u01B0"
 glyph_mem="\u01B1"
 glyph_dl="\u01A5"
-glyph_ul="\u01A4"
 glyph_pow="\u01B2"
 glyph_clk="\u01Af"
 glyph_bln="\u01AA"
@@ -32,6 +31,7 @@ glyph_vol="\u01AC"
 glyph_mute="\u01B4"
 glyph_mail="\u01AD"
 glyph_wifi="\u01AE"
+glyph_plug="\u01A4"
 
 # Song info
 msc(){
@@ -53,12 +53,23 @@ dte(){
 
 #Power and Battery
 bat(){
-  charge=`acpi -b | awk '{print +$4}'`
-  if [ $charge -lt "25" ]
+  on1="$(</sys/class/power_supply/ADP1/online)"
+  charge="$(</sys/class/power_supply/BAT1/capacity)"
+  if [[ $on1 -eq "0" && $charge -lt "25" ]]
   then
+    #below 25%
     echo -ne "${color_urgent}${glyph_pow} ${charge}%${color_normal}"
-  else
+  elif [[ $on1 -eq "0" && $charge -lt "50" ]]
+  then
+    #between 25% and 50%
+    echo -ne "${color_important}${glyph_pow} ${charge}%${color_normal}"
+  elif [ $on1 -eq "0" ]
+  then
+    #above 50%
     echo -ne "${color_selected}${glyph_pow} ${charge}%${color_normal}"
+  else
+    #charging
+    echo -ne "${color_selected}${glyph_plug} ${charge}%${color_normal}"
   fi
 }
 
@@ -86,28 +97,11 @@ load(){
   echo -ne "${glyph_cpu} ${cpu}"
 }
 
-#Network
-rx_old=$(cat /sys/class/net/wlp1s0/statistics/rx_bytes)
-tx_old=$(cat /sys/class/net/wlp1s0/statistics/tx_bytes) 
-while true; do
-  #get new rx/tx counts
-  rx_now=$(cat /sys/class/net/wlp1s0/statistics/rx_bytes)
-  tx_now=$(cat /sys/class/net/wlp1s0/statistics/tx_bytes)
-  #calculate rate (K) divide by 1024 * polling rate (sleep below)
-  let rx_rate=($rx_now-$rx_old)/2048
-  let tx_rate=($tx_now-$tx_old)/2048
-  rx_rate(){
-    echo -ne "${glyph_dl} ${rx_rate}K"
-  }
-  tx_rate(){
-    echo -ne "${glyph_ul} ${tx_rate}K"
-  }
+#Internet Connection
+int(){
+  host google.com > /dev/null &&
+  echo -ne "${glyph_wifi}" || echo -ne "${color_important}${glyph_wifi}${color_normal}"
+}
 
-  # Pipe to statusbar
-  xsetroot -name "$(msc) $(load) $(mem) $(rx_rate)$(tx_rate) $(bat) $(vol) $(dte) "
-
-  #reset rates
-  rx_old=$rx_now
-  tx_old=$tx_now
-  sleep 2
-done
+# Pipe to statusbar
+xsetroot -name "$(msc) $(load) $(mem) $(int) $(bat) $(vol) $(dte) "
