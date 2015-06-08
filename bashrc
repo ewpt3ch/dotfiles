@@ -17,6 +17,7 @@ fi
 # Put your fun stuff here.
 #source /etc/profile.d/bash-completion.sh
 source ~/todo.txt-cli/todo_completion
+source ~/bin/npm_completion
 #pacman aliases
 alias pacupg='sudo pacman -Syu'
 alias pacins='sudo pacman -U'
