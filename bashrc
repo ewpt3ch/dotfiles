@@ -15,8 +15,7 @@ if [[ $- != *i* ]] ; then
 fi
 
 # Put your fun stuff here.
-#source /etc/profile.d/bash-completion.sh
-source ~/todo.txt-cli/todo_completion
+#source ~/todo.txt-cli/todo_completion
 #pacman aliases
 alias pacupg='sudo pacman -Syu'
 alias pacins='sudo pacman -U'
@@ -27,21 +26,16 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-complete -F _todo t
+#complete -F _todo t
 PATH="/home/ewpt3ch/bin:${PATH}:./:"
 export VMWARE_USE_SHIPPED_GTK="yes"
 export EDITOR=vim
 export PAGER=less
-keychain -q ~/.ssh/id_ecdsa ~/.ssh/id_rsa
-. ~/.keychain/$HOSTNAME-sh
-. ~/.keychain/$HOSTNAME-sh-gpg
+#keychain -q ~/.ssh/id_ecdsa ~/.ssh/id_rsa
+#. ~/.keychain/$HOSTNAME-sh
+#. ~/.keychain/$HOSTNAME-sh-gpg
 #Check if dropbox is running
-if  dropbox.py running  ; then
-  #start dropbox
-  ~/bin/dropbox.py start
-fi
-#check if btsync running and start
-if ! ps -A | grep -q btsync ; then
-  #start btsync
-  btsync --config ~/.config/btsync/btsync.conf
-fi
+#if  dropbox.py running  ; then
+#  #start dropbox
+#  ~/bin/dropbox.py start
+#fi
