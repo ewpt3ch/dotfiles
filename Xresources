@@ -7,7 +7,7 @@ Xft*rgba:	rgb
  
 !Xcursor
 Xcursor.theme: Bluecurve	
-Xcursor.size:	22
+Xcursor.size:	42
 
 !xterm
 xterm*termName: 		xterm-256color
