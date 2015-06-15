@@ -27,7 +27,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 complete -F _todo t
-PATH="/home/ewpt3ch/bin:${PATH}:./:"
+PATH="/home/ewpt3ch/bin:/home/ewpt3ch/tmux:${PATH}:./:"
 export VMWARE_USE_SHIPPED_GTK="yes"
 export EDITOR=vim
 export PAGER=less
