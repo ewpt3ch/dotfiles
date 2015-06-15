@@ -1,6 +1,6 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 redshift &
-start-pulseaudio-x11
+start-pulseaudio-x11 &
 google-musicmanager &
 unclutter -noevents &
 setxkbmap -layout us -option ctrl:nocaps &
