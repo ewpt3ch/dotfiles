@@ -29,7 +29,7 @@ static const char *tags[] = { "\u01A0", "\u01a5", "\u01A1 ", "\u01A2", "\u01A3 "
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 3,       False,       -1 },
+	{ "Firefox",  NULL,       NULL,       0,       False,       -1 },
 };
 
 /* layout(s) */
@@ -73,7 +73,9 @@ static Key keys[] = {
   { 0,              XF86XK_AudioLowerVolume, spawn,          {.v = downvol} },
   { 0,              XF86XK_AudioMute,        spawn,          {.v = mute } },
   { MODKEY,                       XK_u,      spawn,          {.v = cmusplaypause} },
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+  { MODKEY,                       XK_bracketright,     spawn,          {.v = cmusnext} },
+  { MODKEY,                       XK_bracketleft,      spawn,          {.v = cmusprev} },
+  { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
