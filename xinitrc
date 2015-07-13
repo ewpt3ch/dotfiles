@@ -1,4 +1,5 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+tresorit --hidden &
 redshift &
 start-pulseaudio-x11 &
 google-musicmanager &
