@@ -16,11 +16,9 @@ fi
 #source /etc/profile.d/bash-completion.sh
 source ~/todo.txt-cli/todo_completion
 source ~/bin/npm_completion
-#pacman aliases
-alias pacman='sudo pacman'
-alias pacupg='pacman -Syu'
-alias pacins='pacman -U'
-#
+#bring in aliases for arch
+source ~/.dotfiles/archalias.bash
+#alias
 alias t='clear && $HOME/Dropbox/todo/todo.sh -d $HOME/Dropbox/todo/todo.cfg'
 alias nano='nano -w'
 alias ls='ls --color=auto'
@@ -36,7 +34,7 @@ export LIBVA_DRIVER_NAME=vdpau
 export BROWSER=firefox-developer
 #create cache-dir for chrome
 mkdir -p /tmp/ewpt3ch-cache
-eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_ed25519) 
+eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_ed25519)
 #Check if dropbox is running
 if  dropbox.py running  ; then
   #start dropbox
