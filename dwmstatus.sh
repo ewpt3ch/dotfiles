@@ -104,4 +104,4 @@ int(){
 }
 
 # Pipe to statusbar
-xsetroot -name "$(msc) $(load) $(mem) $(int) $(bat) $(vol) $(dte) "
+xsetroot -name "$(msc) $(vol) $(load) $(mem) $(int) $(bat) $(dte) "
