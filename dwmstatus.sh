@@ -59,9 +59,9 @@ bat(){
   then
     #below 25%
     echo -ne "${color_urgent}${glyph_pow} ${charge}%${color_normal}"
-  elif [[ $on1 -eq "0" && $charge -lt "50" ]]
+  elif [[ $on1 -eq "0" && $charge -lt "35" ]]
   then
-    #between 25% and 50%
+    #between 25% and 35%
     echo -ne "${color_important}${glyph_pow} ${charge}%${color_normal}"
   elif [ $on1 -eq "0" ]
   then
