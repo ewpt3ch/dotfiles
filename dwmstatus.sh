@@ -55,10 +55,16 @@ dte(){
 bat(){
   on1="$(</sys/class/power_supply/ADP1/online)"
   charge="$(</sys/class/power_supply/BAT1/capacity)"
-  if [[ $on1 -eq "0" && $charge -lt "25" ]]
+  if [[ $on1 -eq "0" && $charge -lt "20" ]]
   then
-    #below 25%
+    #below 20%
     echo -ne "${color_urgent}${glyph_pow} ${charge}%${color_normal}"
+    #send pushbullet to phone
+    if [[ ! -f /run/user/1050/batpush ]]
+    then
+      touch /run/user/1050/batpush
+      battery-push
+    fi
   elif [[ $on1 -eq "0" && $charge -lt "35" ]]
   then
     #between 25% and 35%
@@ -70,6 +76,11 @@ bat(){
   else
     #charging
     echo -ne "${color_selected}${glyph_plug} ${charge}%${color_normal}"
+    #reset battery push
+    if [[ -f /run/user/1050/batpush ]]
+    then
+      rm /run/user/1050/batpush
+    fi
   fi
 }
 
