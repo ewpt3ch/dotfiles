@@ -39,6 +39,5 @@ fi
 redshift &
 unclutter -noevents &
 setxkbmap -layout us -option ctrl:nocaps &
-tresorit --hidden &
 google-musicmanager &
 exec $HOME/bin/dwm-start
