@@ -59,9 +59,9 @@ static const Layout layouts[] = {
 static const char  *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
 static const char *termcmd[]  = { "termite", NULL };
 /*functions for volume control*/
-static const char *upvol[] = { "amixer", "sset", "Master", "1%+", NULL};
-static const char *downvol[] = { "amixer", "sset", "Master", "1%-", NULL};
-static const char *mute[] = { "amixer", "sset", "Master", "toggle", NULL};
+static const char *upvol[] = { "volumeset", "up", NULL }; 
+static const char *downvol[] = { "volumeset", "down", NULL };
+static const char *mute[] = { "volumeset", "mute", NULL };
 /*cmus functions*/
 static const char *cmusplaypause[] = { "cmus-remote", "-u", NULL};
 static const char *cmusnext[] = { "cmus-remote", "--next", NULL};
