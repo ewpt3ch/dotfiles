@@ -10,12 +10,12 @@ static const char colors[NUMCOLORS][ColLast][9] = {
   // border foreground background
   { "#212121", "#00FFFF", "#2F4F4F" }, // 0 = normal
   { "#696969", "#ADFF2F", "#2F4F4F" }, // 1 = selected
-  { "#212121", "#F8F8FF", "#C71585" }, // 2 = urgent 
-  { "#212121", "#90EE90", "#778899" }, // 3 = important 
+  { "#212121", "#F8F8FF", "#C71585" }, // 2 = urgent
+  { "#212121", "#90EE90", "#778899" }, // 3 = important
   { "#212121", "#FFFF00", "#2F4F4F" }, // 4 = yellow
   { "#212121", "#00BFFF", "#2F4F4F" }, // 5 = blue
   { "#212121", "#00FFFF", "#2F4F4F" }, // 6 = cyan
-  { "#212121", "#FF00FF", "#2F4F4F" }, // 7 = magenta 
+  { "#212121", "#FF00FF", "#2F4F4F" }, // 7 = magenta
   { "#212121", "#F5F5F5", "#2F4F4F" }, // 8 = grey
   };
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
