@@ -89,8 +89,7 @@ vol(){
   mute=`amixer get Master | grep "Front Left:" | awk '{print $6}'`
   if [ ${mute} == "[on]" ]
   then
-    volume=`amixer get Master | grep "Front Left:" | awk '{print $5}' | tr -d '[]'`
-    echo -ne "${glyph_vol} ${volume}"
+    echo -ne "${glyph_vol}"
   else
     echo -ne "${glyph_mute}"
   fi
