@@ -55,9 +55,9 @@ dte(){
 bat(){
   on1="$(</sys/class/power_supply/ADP1/online)"
   charge="$(</sys/class/power_supply/BAT1/capacity)"
-  if [[ $on1 -eq "0" && $charge -lt "20" ]]
+  if [[ $on1 -eq "0" && $charge -lt "25" ]]
   then
-    #below 20%
+    #below 25%
     echo -ne "${color_urgent}${glyph_pow} ${charge}%${color_normal}"
     #send pushbullet to phone
     if [[ ! -f /run/user/1050/batpush ]]
