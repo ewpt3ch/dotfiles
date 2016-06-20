@@ -6,3 +6,7 @@ currently the repo is .dotfiles in ~ with symlinks from the default file to it's
 #### naming conventions
 Kernels: kernel.*machine-name* ie kernel.yoga2
 
+#### Local config
+Notes on local configuration stuff are in Local-config.*machine-name* ir Local-config.yoga2
+Things included kernel cmdline, Xorg config, other customizations for working around bugs
+or hardware issues.
