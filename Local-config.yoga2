@@ -1,0 +1,5 @@
+kernel cmdline altered in /boot/refind.conf
+added: i915.enable_psr=0 to workaround intel drm bug(appeared with kernel 4.6)
+
+removed xf86-video-intel in attempt to fix above bug, system appears 'smoother' without
+it, so leaving it out for now.
