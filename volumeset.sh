@@ -23,7 +23,7 @@ muted=`amixer get Master | grep "Front Left:" | awk '{print $6}'`
 vol=`amixer get Master | grep "Front Left:" | awk '{print $5}' | tr -d '[]'`
 
 if [[ $muted == "[off]" ]]; then
-  twmnc -t 'volume' -c 'muted' -d 1000
+  twmnc -t 'volume' -c 'muted' -d 100
 else
-  twmnc -t 'volume' -c "${direction}${vol}" -d 1000
+  twmnc -t 'volume' -c "${direction}${vol}" -d 100
 fi
