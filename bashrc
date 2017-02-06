@@ -26,7 +26,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 complete -F _todo t
-PATH="/home/ewpt3ch/bin:/home/ewpt3ch/tmux:/home/ewpt3ch/local/nodejs/bin:${PATH}:./:"
+PATH="/home/ewpt3ch/bin:/home/ewpt3ch/tmux:${PATH}:./:"
 #export VMWARE_USE_SHIPPED_GTK="yes"
 export EDITOR=vim
 export PAGER=less
@@ -40,3 +40,7 @@ if  dropbox.py running  ; then
   #start dropbox
   ~/bin/dropbox.py start
 fi
+
+export NVM_DIR="/home/ewpt3ch/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
