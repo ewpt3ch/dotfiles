@@ -33,7 +33,8 @@ export PAGER=less
 export LIBVA_DRIVER_NAME=vdpau
 export BROWSER=firefox-developer
 #create cache-dir for chrome
-mkdir -p /tmp/ewpt3ch-cache
+mkdir -p /tmp/ewpt3ch-cache/chrome
+mkdir -p /tmp/ewpt3ch-cache/chromium
 eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_ed25519)
 #Check if dropbox is running
 if  dropbox.py running  ; then
