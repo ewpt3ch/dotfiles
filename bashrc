@@ -12,7 +12,15 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-# Put your fun stuff here.
+#Shell Variables 
+PATH="/home/ewpt3ch/bin:/home/ewpt3ch/tmux:${PATH}:./:"
+export EDITOR=vim
+export PAGER=less
+export LIBVA_DRIVER_NAME=vdpau
+export BROWSER=firefox-developer
+export GOPATH="/home/ewpt3ch/go"
+
+
 #source /etc/profile.d/bash-completion.sh
 source ~/todo.txt-cli/todo_completion
 source ~/bin/npm_completion
@@ -26,12 +34,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 complete -F _todo t
-PATH="/home/ewpt3ch/bin:/home/ewpt3ch/tmux:${PATH}:./:"
-#export VMWARE_USE_SHIPPED_GTK="yes"
-export EDITOR=vim
-export PAGER=less
-export LIBVA_DRIVER_NAME=vdpau
-export BROWSER=firefox-developer
 #create cache-dir for chrome
 mkdir -p /tmp/ewpt3ch-cache/chrome
 mkdir -p /tmp/ewpt3ch-cache/chromium
