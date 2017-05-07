@@ -20,6 +20,10 @@ export LIBVA_DRIVER_NAME=vdpau
 export BROWSER=firefox-developer
 export GOPATH="/home/ewpt3ch/go"
 
+#Create dirs for things that won't themselves
+mkdir -p /tmp/ewpt3ch-cache/chrome
+mkdir -p /tmp/ewpt3ch-cache/chromium
+mkdir -p /tmp/makepkg
 
 #source /etc/profile.d/bash-completion.sh
 source ~/todo.txt-cli/todo_completion
@@ -34,9 +38,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 complete -F _todo t
-#create cache-dir for chrome
-mkdir -p /tmp/ewpt3ch-cache/chrome
-mkdir -p /tmp/ewpt3ch-cache/chromium
 eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_ed25519)
 #Check if dropbox is running
 if  dropbox.py running  ; then
