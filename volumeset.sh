@@ -10,10 +10,10 @@ if [[ $# -eq 1 ]]; then
     "up")
       pactl set-sink-mute $sink false
       pactl set-sink-volume $sink +$step%
-      direction='increased to ';;
+      direction='increased to';;
     "down")
       pactl set-sink-volume $sink -$step%
-      direction='decreased to ';;
+      direction='decreased to';;
     "mute")
       pactl set-sink-mute $sink toggle;;
     *)
@@ -24,7 +24,7 @@ fi
 muted=`pactl list sinks | grep "Mute" | awk '{print $2}'`
 vol=`pactl list sinks | grep "front-left" | awk '{print $5}'`
 
-if [[ $muted == "no" ]]; then
+if [[ $muted == "yes" ]]; then
   twmnc -t 'volume' -c 'muted' -d 100
 else
   twmnc -t 'volume' -c "${direction}${vol}" -d 100
