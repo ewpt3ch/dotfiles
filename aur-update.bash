@@ -9,15 +9,14 @@ AURBUILD=/tmp/makepkg
 #create necessary dirs if not exist
 mkdir -p ${AURBUILD}
 
-#cower --update --download --target=${AURBUILD}
-cower -d -t ${AURBUILD} cower
+cower --update --download --target=${AURBUILD}
 
 cd ${AURBUILD}
-for dir in ${AURBUILD}/* 
+for dir in ${AURBUILD}/*
 do
   cd ${dir}
-  echo "building ${dir}"
-  echo "makepkg --install"
+  twmnc -t "aur-build" -c "building ${dir}" -d 5000
+  makepkg --install
   cd ${AURBUILD}
   rm -r ${dir}
 done
