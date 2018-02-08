@@ -1,0 +1,16 @@
+#fetch passwords
+source "gpg -dq $HOME/.mutt/zoho-mutt-pass.gpg |"
+
+#ewpt3ch.com imap
+set folder    = imaps://imappro.zoho.com
+set imap_user = eric@ewpt3ch.com
+set imap_pass = $my_pass
+set spoolfile = +INBOX
+mailboxes     = +INBOX
+
+#ewpt3ch.com smtp
+set realname = 'Eric W Phillips'
+set from = eric@ewpt3ch.com
+set use_from = yes
+set smtp_url=smtps://$imap_user:$imap_pass@smtp.zoho.com
+
