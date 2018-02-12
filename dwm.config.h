@@ -56,10 +56,10 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char  *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
 static const char *termcmd[]  = { "termite", NULL };
 /*functions for volume control*/
-static const char *upvol[] = { "volumeset", "up", NULL }; 
+static const char *upvol[] = { "volumeset", "up", NULL };
 static const char *downvol[] = { "volumeset", "down", NULL };
 static const char *mute[] = { "volumeset", "mute", NULL };
 /*cmus functions*/
@@ -76,9 +76,9 @@ static Key keys[] = {
   { 0,              XF86XK_AudioMute,        spawn,          {.v = mute } },
   { 0,              XF86XK_AudioPlay,        spawn,          {.v = cmusplaypause} },
   { 0,              XF86XK_AudioPause,       spawn,          {.v = cmusplaypause} },
-  { MODKEY,                       XK_u,      spawn,          {.v = cmusplaypause} },
-  { MODKEY,                       XK_bracketright,     spawn,          {.v = cmusnext} },
-  { MODKEY,                       XK_bracketleft,      spawn,          {.v = cmusprev} },
+  { MODKEY,         XK_u,                    spawn,          {.v = cmusplaypause} },
+  { MODKEY,         XK_bracketright,         spawn,          {.v = cmusnext} },
+  { MODKEY,         XK_bracketleft,          spawn,          {.v = cmusprev} },
   { MODKEY|ControlMask,           XK_s,      spawn,          {.v = screenshot} },
   { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
