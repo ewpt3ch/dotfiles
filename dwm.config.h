@@ -68,6 +68,8 @@ static const char *cmusnext[] = { "cmus-remote", "--next", NULL};
 static const char *cmusprev[] = { "cmus-remote", "--prev", NULL};
 /*screenshot*/
 static const char *screenshot[] = { "scrot", NULL};
+/*multi-head*/
+static const char *multihead[] = { "hdmi-plug.sh", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -80,6 +82,7 @@ static Key keys[] = {
   { MODKEY,         XK_bracketright,         spawn,          {.v = cmusnext} },
   { MODKEY,         XK_bracketleft,          spawn,          {.v = cmusprev} },
   { MODKEY|ControlMask,           XK_s,      spawn,          {.v = screenshot} },
+  { MODKEY|ControlMask,           XK_m,      spawn,          {.v = multihead} },
   { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
