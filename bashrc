@@ -13,12 +13,12 @@ if [[ $- != *i* ]] ; then
 fi
 
 #Shell Variables 
-PATH="/home/ewpt3ch/bin:/home/ewpt3ch/tmux:${PATH}:./:"
 export EDITOR=vim
 export PAGER=less
 export LIBVA_DRIVER_NAME=vdpau
 export BROWSER=firefox-developer
 export GOPATH="/home/ewpt3ch/go"
+PATH="/home/ewpt3ch/bin:/home/ewpt3ch/tmux:${GOPATH}/bin:${PATH}:./:"
 
 #Create dirs for things that won't themselves
 mkdir -p /tmp/ewpt3ch-cache/chrome
