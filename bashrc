@@ -42,3 +42,4 @@ eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_ed25519)
 export NVM_DIR="/home/ewpt3ch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+exec fish
